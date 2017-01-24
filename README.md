@@ -1,1 +1,1 @@
-# Pract1
+# Java EE course
