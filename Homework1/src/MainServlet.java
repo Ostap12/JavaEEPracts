@@ -13,7 +13,7 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        request.getRequestDispatcher("main.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override
@@ -22,12 +22,12 @@ public class MainServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String login = request.getParameter("username");
         String password = request.getParameter("password");;
-     if(login.equals(name) && password.equals(pass)){
-         out.println("<h1>Heloo!!!</h1>");
-      }
-      else{
-         out.println("<h1>BAD LOGIN OR PASSWORD!!!</h1>");
-     }
+        if(login.equals(name) && password.equals(pass)){
+            out.println("<h1>Heloo!!!</h1>");
+        }
+        else{
+            out.println("<h1>BAD LOGIN OR PASSWORD!!!</h1>");
+        }
     }
 
 
