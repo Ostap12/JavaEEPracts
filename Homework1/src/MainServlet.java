@@ -12,7 +12,7 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        request.setAttribute("result", "This is the result of the servlet call");
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
