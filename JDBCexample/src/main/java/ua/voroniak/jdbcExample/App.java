@@ -19,16 +19,23 @@ public class App
         Student testStudent = new Student("Vlad Valt", 5);
         worker.saveStudentToDb(testStudent);
 
-        WorkWithTeacher workWithTeacher =
-                (WorkWithTeacher) context.getBean("teachersWorker");
-        Teacher teacher = new Teacher();
-        teacher.setFirstname("Andrii");
-        teacher.setLastname("Glybovets");
-        teacher.setCellphone("+380675097865");
-        teacher = workWithTeacher.addTeacher(teacher);
-        Calendar calendar = Calendar.getInstance();
-        teacher.setBirthDate(new Date(1980, 1,1));
-        workWithTeacher.saveTacher(teacher);
+        Student student = worker.getStudentFromDbById(1);
+        System.out.println(student);
+        student = worker.getStudentFromDbById(1);
+        System.out.println(student);
+
+
+
+//        WorkWithTeacher workWithTeacher =
+//                (WorkWithTeacher) context.getBean("teachersWorker");
+//        Teacher teacher = new Teacher();
+//        teacher.setFirstname("Andrii");
+//        teacher.setLastname("Glybovets");
+//        teacher.setCellphone("+380675097865");
+//        teacher = workWithTeacher.addTeacher(teacher);
+//        Calendar calendar = Calendar.getInstance();
+//        teacher.setBirthDate(new Date(1980, 1,1));
+//        workWithTeacher.saveTacher(teacher);
 
 
 

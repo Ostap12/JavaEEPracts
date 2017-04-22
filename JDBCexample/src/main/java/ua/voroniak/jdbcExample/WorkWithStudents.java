@@ -1,8 +1,13 @@
 package ua.voroniak.jdbcExample;
 
+import com.googlecode.ehcache.annotations.Cacheable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
 import ua.voroniak.jdbcExample.dao.StudentsDao;
 import ua.voroniak.jdbcExample.entity.Student;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class WorkWithStudents {
@@ -15,5 +20,6 @@ public class WorkWithStudents {
             System.out.println("Student have been saved "+student);
         }
     }
+
 }
 

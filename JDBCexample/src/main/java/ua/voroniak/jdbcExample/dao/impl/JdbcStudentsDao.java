@@ -1,5 +1,6 @@
 package ua.voroniak.jdbcExample.dao.impl;
 
+import com.googlecode.ehcache.annotations.Cacheable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,7 @@ public class JdbcStudentsDao implements StudentsDao {
                 student.getCourse());
     }
 
+    @Cacheable(cacheName = "studentsCache")
     public Student getStudentById(int id){
         return jdbcTemplate.queryForObject(SQL_SELECT_STUDENT_BY_ID,
                 new RowMapper<Student>() {
